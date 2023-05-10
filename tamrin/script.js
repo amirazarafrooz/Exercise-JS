@@ -1,16 +1,24 @@
 //count each letter in sentence
-const sentence = "khanom hoseini jalase akhar dasht sabzi pak mikard yadesh be kheir ..."
-const rawData = [...sentence]
-const data = Object.values(rawData.reduce((prev,cur) => {
-const letters  = cur.toUpperCase();
-const count = 1;
+const sentence = "khanom hoseini jJalase akhar dasht sabzi pak mikard yadesh be kheir ..."
 
-    if(!prev[letters]) prev[letters] = {letters: letters,count : 1}
-    else prev[letters].count=prev[letters].count+1;
+
+function oniKePeyvandiMikhast() { 
+const rawData = sentence.replaceAll(' ','').split('');
+const data = (rawData.reduce((prev,cur) => {
+// const letters  = cur;
+const count = 1;
+    if(!prev[cur]) prev[cur] = 1
+    else prev[cur]=prev[cur]+1;
     return prev;
 }, {}))
 
 const outPut = {}
 for(let i = 0; i < data.length; i++){
-    console.log(data[i].letters + ' : ' + data[i].count)
+    // console.log(data[i].letters + ' : ' + data[i].count)
 }
+return data
+}
+
+
+oniKePeyvandiMikhast(sentence);
+console.log(oniKePeyvandiMikhast(sentence));
