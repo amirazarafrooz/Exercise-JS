@@ -2,12 +2,12 @@
 const sentence = "khanom hoseini jJalase akhar dasht sabzi pak mikard yadesh be kheir ..."
 
 
-function oniKePeyvandiMikhast() { 
+function oniKePeyvandiMikhast(str = '') { 
 const rawData = sentence.replaceAll(' ','').split('');
 const data = (rawData.reduce((prev,cur) => {
 // const letters  = cur;
 const count = 1;
-    if(!prev[cur]) prev[cur] = 1
+    if(!prev[cur]) prev[cur] = 0 + 1
     else prev[cur]=prev[cur]+1;
     return prev;
 }, {}))
