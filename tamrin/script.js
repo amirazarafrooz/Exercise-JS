@@ -3,7 +3,7 @@ const sentence = "khanom hoseini jJalase akhar dasht sabzi pak mikard yadesh be 
 
 
 function oniKePeyvandiMikhast(str = '') { 
-const rawData = sentence.replaceAll(' ','').split('');
+const rawData = str.replaceAll(' ','').split('');
 const data = (rawData.reduce((prev,cur) => {
 // const letters  = cur;
 const count = 1;
@@ -20,5 +20,5 @@ return data
 }
 
 
-oniKePeyvandiMikhast(sentence);
+// oniKePeyvandiMikhast(sentence);
 console.log(oniKePeyvandiMikhast(sentence));
